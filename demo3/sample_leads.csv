@@ -1,0 +1,13 @@
+name,business,phone_or_email,channel,last_contact_date,stage,quoted_value,notes
+Rajesh Gupta,Gupta Jewellers,rajesh.gupta@example.com,email,2026-09-21,new,0,Asked about pricing over email
+Anil Mehta,Mehta Real Estate,+919876543210,whatsapp,2026-09-20,new,0,Requested demo video on WhatsApp
+Priya Sharma,Sharma Boutique,priya.sharma@example.com,email,2026-09-13,quote_sent,45000,Quote sent for WhatsApp chatbot
+Vikram Singh,Singh Auto Motors,vikram.singh@example.com,email,2026-09-10,negotiating,120000,Negotiating payment terms
+Neha Kapoor,Kapoor Dental Care,+919812345678,whatsapp,2026-09-05,quote_sent,60000,Waiting for partner approval
+Amit Verma,Verma Fitness Studio,amit.verma@example.com,email,2026-08-05,quote_sent,85000,Went quiet right after the quote
+Sunita Rao,Rao Interiors,+919823456789,whatsapp,2026-08-08,negotiating,150000,Asked for a discount then disappeared
+Arjun Nair,Nair Electronics,arjun.nair@example.com,email,2026-07-20,new,0,Enquired via website contact form
+Kavita Desai,Desai Bakery,+919834567890,whatsapp,2026-09-18,quote_sent,35000,Quote sent; followed up once already
+Rohit Malhotra,Malhotra Travels,rohit.malhotra@example.com,email,2026-07-15,cold,200000,Old lead; no response in months
+Deepak Yadav,Yadav Sweets,+919845678901,whatsapp,2026-09-22,new,0,Enquired yesterday on WhatsApp
+Meena Iyer,Iyer Catering,meena.iyer@example.com,email,2026-08-20,quote_sent,95000,Asked for case studies

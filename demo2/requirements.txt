@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+scikit-learn
+# optional: litellm  (only needed for the LLM fallback path when OPENAI_API_KEY/ANTHROPIC_API_KEY is set)

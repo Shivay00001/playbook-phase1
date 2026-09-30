@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VisionQuantech — Pipeline Tracker</title>
+<style>
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#0f172a;color:#e2e8f0}
+.wrap{max-width:1100px;margin:0 auto;padding:24px}
+h1{font-size:1.4rem;margin:0 0 4px}.sub{color:#94a3b8;font-size:.9rem;margin-bottom:16px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+input,select{background:#1e293b;border:1px solid #334155;color:#e2e8f0;padding:8px 12px;border-radius:8px;font-size:.9rem}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.stat{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:10px 14px;font-size:.85rem}
+.stat b{font-size:1.2rem;display:block}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{text-align:left;padding:10px;border-bottom:2px solid #334155;color:#94a3b8;position:sticky;top:0;background:#0f172a}
+td{padding:10px;border-bottom:1px solid #1e293b;vertical-align:top}
+tr:hover td{background:#16213a}
+small{color:#94a3b8}
+.pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.75rem;font-weight:600}
+.pill.sent{background:#14532d;color:#bbf7d0}.pill.draft{background:#713f12;color:#fde68a}
+.pill.follow{background:#1e3a8a;color:#bfdbfe}.pill.new{background:#3f3f46;color:#e4e4e7}
+.hidden{display:none}
+.note{margin-top:16px;color:#64748b;font-size:.8rem}
+</style></head><body><div class="wrap">
+<h1>📊 VisionQuantech — Pipeline Tracker</h1>
+<div class="sub">Live outreach pipeline · updated 2026-09-23 · all rows are real leads, no invented data</div>
+<div class="stats">
+<div class="stat"><b>65</b>prospects tracked</div>
+<div class="stat"><b>28</b>touches sent 2026-09-23</div>
+<div class="stat"><b>11</b>WhatsApp drafts awaiting Send</div>
+<div class="stat"><b>25</b>new — not yet contacted</div>
+</div>
+<div class="bar">
+<input id="q" type="search" placeholder="Search name, country, contact…" style="flex:1;min-width:200px">
+<select id="stage"><option value="">All stages</option>
+<option>Email sent 2026-09-23</option><option>WhatsApp sent 2026-09-23</option>
+<option>WhatsApp draft ready</option><option>Follow-up 1 sent 2026-09-23</option>
+<option>New — not contacted</option></select>
+</div>
+<table><thead><tr><th>Prospect</th><th>Stage</th><th>Est. value</th><th>Next action</th><th>Date</th></tr></thead>
+<tbody id="rows">
+<tr class='draft'><td><b>Al Muhaidib Dental Group</b><br><small>+966530093007 · Dental clinic · Saudi Arabia</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>SAR 3,500</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='draft'><td><b>Property Plus</b><br><small>+965 99979981 · Real estate · Kuwait</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>KWD 3,500</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='draft'><td><b>Lake Pichola Hotel</b><br><small>+91 6376364840 · Boutique/heritage hotel · India</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>₹35,000</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='draft'><td><b>Karohi Haveli</b><br><small>+91 9680181111 · Boutique/heritage hotel · India</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>₹35,000</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Toronto Beach Dental</b><br><small>torbeachdental@torbeachdental.com · Dental clinic · Canada</small></td><td><span class='pill new'>New — not contacted</span></td><td>C$3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>Dr. Shradha Dental Center</b><br><small>+91-8056222200 · Dental clinic · India</small></td><td><span class='pill new'>New — not contacted</span></td><td>₹35,000</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='new'><td><b>GH Realty (SPRS Real Estate LLC)</b><br><small>+971 54 211 5968 · Real estate · UAE</small></td><td><span class='pill new'>New — not contacted</span></td><td>AED 3,500</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='new'><td><b>EIPL Group</b><br><small>+91 91215 55555 · Real estate · India</small></td><td><span class='pill new'>New — not contacted</span></td><td>₹35,000</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='sent'><td><b>RR Group</b><br><small>+91 9236399201 · Real estate · India</small></td><td><span class='pill sent'>WhatsApp sent 2026-09-23</span></td><td>₹35,000</td><td>Follow up 2026-09-25 if no reply</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>Lakeway Cosmetic &amp; Family Dentistry</b><br><small>lakewaydentistry@gmail.com · Dental clinic · USA</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>Fang Dental</b><br><small>hello@fangdental.sg · Dental clinic · Singapore</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>S$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='draft'><td><b>Souq Waqif Boutique Hotels by Tivoli</b><br><small>+974 4433 6666 · Boutique/heritage hotel · Qatar</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>QAR 3,500</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Navanaami Projects</b><br><small>+91 9132 959 959 · Real estate · India</small></td><td><span class='pill new'>New — not contacted</span></td><td>₹35,000</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='draft'><td><b>Binayah Properties</b><br><small>+971-55-509-9157 · Real estate · UAE</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>AED 3,500</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Invictus Property Advisors</b><br><small>info@invictusnyc.com · Real estate · USA</small></td><td><span class='pill new'>New — not contacted</span></td><td>$3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='draft'><td><b>The Dental Specialists</b><br><small>+91 9000021174 · Dental clinic · India</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>₹35,000</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Allsopp &amp; Allsopp</b><br><small>+971 4 429 4444 · Real estate · UAE</small></td><td><span class='pill new'>New — not contacted</span></td><td>AED 3,500</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='new'><td><b>Wimpole Street Dental Clinic</b><br><small>reception@wsdental.clinic · Dental clinic · UK</small></td><td><span class='pill new'>New — not contacted</span></td><td>£3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>Manhattan Boutique Real Estate</b><br><small>info@mbreny.com · Real estate · USA</small></td><td><span class='pill new'>New — not contacted</span></td><td>$3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>Brigade Valencia (Brigade Group)</b><br><small>+91-8046474054 · Real estate · India</small></td><td><span class='pill new'>New — not contacted</span></td><td>₹35,000</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='new'><td><b>Espace Real Estate</b><br><small>+97143069999 · Real estate · UAE</small></td><td><span class='pill new'>New — not contacted</span></td><td>AED 3,500</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='new'><td><b>Dr Majd Dental Clinic Qatar</b><br><small>+974 33645408 · Dental clinic · Qatar</small></td><td><span class='pill new'>New — not contacted</span></td><td>QAR 3,500</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='sent'><td><b>Veda Group</b><br><small>+91 9109108168 · Real estate · India</small></td><td><span class='pill sent'>WhatsApp sent 2026-09-23</span></td><td>₹35,000</td><td>Follow up 2026-09-25 if no reply</td><td>2026-09-23</td></tr>
+<tr class='draft'><td><b>Airen Group</b><br><small>+91 6200800300 · Real estate · India</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>₹35,000</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Neemrana Fort-Palace</b><br><small>+91 1 49 4672 800 · Boutique/heritage hotel · India</small></td><td><span class='pill new'>New — not contacted</span></td><td>₹35,000</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='new'><td><b>Smiley Dental Treatment Centre Pvt Ltd</b><br><small>+91 9830089214 · Dental clinic · India</small></td><td><span class='pill new'>New — not contacted</span></td><td>₹35,000</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='draft'><td><b>LBR Dental &amp; Implant Center</b><br><small>+91 9849008623 · Dental clinic · India</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>₹35,000</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>High Street Dental Clinic</b><br><small>reception@highstreetdental.co.uk · Dental clinic · UK</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>£3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Manoir Vieux-Québec</b><br><small>info@manoirvieuxquebec.com · Boutique/heritage hotel · Canada</small></td><td><span class='pill new'>New — not contacted</span></td><td>C$3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>The Yard in Bath</b><br><small>hello@theyardinbath.co.uk · Boutique/heritage hotel · UK</small></td><td><span class='pill new'>New — not contacted</span></td><td>£3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>Onyx Property Team</b><br><small>support@onyxpropertyteam.com · Real estate · UK</small></td><td><span class='pill new'>New — not contacted</span></td><td>£3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='sent'><td><b>Hotel NuVe Heritage</b><br><small>contact@hotelnuveheritage.com · Boutique/heritage hotel · Singapore</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>S$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Daniel Féau Conseil Immobilier</b><br><small>contact@danielfeau.com · Real estate · France</small></td><td><span class='pill new'>New — not contacted</span></td><td>€3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='sent'><td><b>Australian Heritage Hotel</b><br><small>info@australianheritagehotel.com · Boutique/heritage hotel · Australia</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>A$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Karni Bhawan Palace</b><br><small>+91 900 179 6235 · Boutique/heritage hotel · India</small></td><td><span class='pill new'>New — not contacted</span></td><td>₹35,000</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='sent'><td><b>Central Family Dentistry</b><br><small>Centralfamilydentistry@outlook.com · Dental clinic · USA</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>The Hotel Windsor Melbourne</b><br><small>reservations@thw.com.au · Boutique/heritage hotel · Australia</small></td><td><span class='pill new'>New — not contacted</span></td><td>A$3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>Chicago Smile Design</b><br><small>us@chicagosmiledesign.com · Dental clinic · USA</small></td><td><span class='pill new'>New — not contacted</span></td><td>$3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>Behlys</b><br><small>+968 9890 0744 · Boutique/heritage hotel · Oman</small></td><td><span class='pill new'>New — not contacted</span></td><td>OMR 3,500</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='new'><td><b>Vaneau Marais</b><br><small>marais@vaneau.fr · Real estate · France</small></td><td><span class='pill new'>New — not contacted</span></td><td>€3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='sent'><td><b>AMOY Boutique Hotel</b><br><small>info.amoy@fareast.com · Boutique/heritage hotel · Singapore</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>S$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>Ingleby House Dental Practice</b><br><small>info@inglebyhouse.co.uk · Dental clinic · UK</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>£3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='draft'><td><b>Dubayt Real Estate Agency</b><br><small>+971 55 529 9360 · Real estate · UAE</small></td><td><span class='pill draft'>WhatsApp draft ready</span></td><td>AED 3,500</td><td>Shivay: press Send in the chat</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>Ashworth Holme</b><br><small>andrew@ashworthholme.co.uk · Real estate · UK</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>£3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>123 Dental</b><br><small>info@123-dental.com · Dental clinic · Canada</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>C$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>Casa Dental</b><br><small>casadental.amk@gmail.com · Dental clinic · Singapore</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>S$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>AAriane Real Estate</b><br><small>contact@aariane.com · Real estate · France</small></td><td><span class='pill new'>New — not contacted</span></td><td>€3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='sent'><td><b>The Morshed Group</b><br><small>operations@themorshedgroup.com · Real estate · USA</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+<tr class='new'><td><b>Olde Harbour Inn</b><br><small>reservations@oldeharbourinn.com · Boutique/heritage hotel · USA</small></td><td><span class='pill new'>New — not contacted</span></td><td>$3,500</td><td>Send first pitch via Email</td><td>—</td></tr>
+<tr class='new'><td><b>Sumou</b><br><small>920 028 029 · Real estate · Saudi Arabia</small></td><td><span class='pill new'>New — not contacted</span></td><td>SAR 3,500</td><td>Send first pitch via WhatsApp</td><td>—</td></tr>
+<tr class='follow'><td><b>Real Extn</b><br><small>info@realextn.com · Real estate · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Gunjan Estate Consultant</b><br><small>gunjanestate@gmail.com · Real estate · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Laasya Projects</b><br><small>laasyaprojects@gmail.com · Real estate · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Realtors Property</b><br><small>realtorsproperty7@gmail.com · Real estate · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Samode</b><br><small>reservations@samode.com · Hotel · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Siolim House</b><br><small>info@siolimhouse.com · Hotel · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Maravilha</b><br><small>reservations@maravilha.in · Hotel · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>28 Kothi</b><br><small>reservation@28kothi.com · Hotel · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>All Cure Hospital</b><br><small>contact@allcurehospital.com · Clinic · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Crown and Roots</b><br><small>info@crownandroots.com · Clinic · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Dental Clinic Delhi</b><br><small>info@dentalclinicdelhi.com · Clinic · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Bluetooth Dental Clinic</b><br><small>dranjanav@gmail.com · Clinic · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Priyajv74</b><br><small>Priyajv74@gmail.com · Clinic · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='follow'><td><b>Dental Decare</b><br><small>dentaldecare4u@gmail.com · Clinic · India</small></td><td><span class='pill follow'>Follow-up 1 sent 2026-09-23</span></td><td>₹35,000</td><td>Follow-up 2 if no reply by 2026-09-28</td><td>2026-09-23</td></tr>
+<tr class='sent'><td><b>The Morshed Group</b><br><small>operations@themorshedgroup.com · Real estate · USA</small></td><td><span class='pill sent'>Email sent 2026-09-23</span></td><td>$3,500</td><td>Follow up 2026-09-26 if no reply</td><td>2026-09-23</td></tr>
+</tbody></table>
+<div class="note">Est. value = Starter-tier Agent Sprint in the prospect's local currency (India ₹35,000 · international 3,500 local units — from the official pricing file). Stages reflect verified sends only.</div>
+</div>
+<script>
+const q=document.getElementById('q'),s=document.getElementById('stage'),rows=[...document.querySelectorAll('#rows tr')];
+function f(){const t=q.value.toLowerCase(),st=s.value;
+rows.forEach(r=>{const okT=r.textContent.toLowerCase().includes(t);
+const okS=!st||r.querySelector('.pill').textContent===st;
+r.classList.toggle('hidden',!(okT&&okS))})}
+q.addEventListener('input',f);s.addEventListener('change',f);
+</script></body></html>
